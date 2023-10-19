@@ -1,7 +1,8 @@
 class Hamburger{
+  
   // https://www.youtube.com/watch?v=bHRXRYTppHM&t=57s
 
-  constructor(Menu,NavList,NavLinks){
+  constructor(Menu, NavList, NavLinks){
     this.Menu = document.querySelector(Menu)
     this.NavList = document.querySelector(NavList)
     this.NavLinks = document.querySelectorAll(NavLinks)

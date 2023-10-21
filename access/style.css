@@ -13,6 +13,7 @@
   --black: #000000;
   --white: #ffffff;
 
+  --little-black: hsl(0, 0%, 5%);
   --dark: #141414;
   --dark-light: #202020;
 
@@ -43,6 +44,27 @@ a:hover{
   opacity: .7;
 }
 
+.button{
+  background: none;
+  border: 2px solid var(--blue);
+ 
+  padding: 12px;
+
+  width: 180px;
+
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 400ms;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -63,30 +85,30 @@ img{
 
 /* NAVEGAÇÃO ----------------------------------------------------------------------------------------------------------------------------*/
 
-.logo{
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  background-color: #000;
+  
+  height: var(--navHeight);
+}
+
+nav .logo{
   font-family: 'Gemunu Libre', sans-serif;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 
-nav{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  background-color: #000;
-
-  height: var(--navHeight);
-}
-
-.hamburger{
+nav .hamburger{
   display: none;
 
   cursor: pointer;
 }
 
-.hamburger div{
+nav .hamburger div{
   background-color: #fff;
 
   width: 32px;
@@ -97,31 +119,31 @@ nav{
   transition: .5s;
 }
 
-.nav-list{
+nav .nav-list{
   list-style: none;
 
   display: flex;
 }
 
-.nav-list.active{
+nav .nav-list.active{
   transform: translateX(0);
 }
 
-.nav-list li{
+nav .nav-list li{
   letter-spacing: 4px;
 
   margin-left: 32px;
 }
 
-.hamburger.active .line-1{
+nav .hamburger.active .line-1{
   transform: rotate(-45deg) translate(-8px, 8px);
 }
 
-.hamburger.active .line-2{
+nav .hamburger.active .line-2{
   opacity: 0;
 }
 
-.hamburger.active .line-3{
+nav .hamburger.active .line-3{
   transform: rotate(45deg) translate(-5px, -7px);
 }
 
@@ -192,27 +214,6 @@ nav{
 
 #home .typing {
   animation: line-typing 500ms steps(50) infinite normal, typing 2s steps(50) 1.5s normal backwards;
-}
-
-.button{
-  background: none;
-  border: 2px solid var(--blue);
- 
-  padding: 12px;
-
-  width: 180px;
-
-  color: var(--blue);
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: 400ms;
 }
 
 #home .col-b{
@@ -369,59 +370,61 @@ nav{
 
 /* SERVIÇOS -----------------------------------------------------------------------------------------------------------------------------*/
 
-#service{
+#service {
   padding: 32px;
 }
 
-#service header{
+#service header {
   text-align: center;
+  margin-block: 48px;
 }
 
-#service header h1{
+#service header h1 {
   font-size: 48px;
   color: var(--blue);
 }
 
-#service ul{
-  list-style: none;
-
+#service .service-cards {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
 }
 
-#service ul .box{
-  width: 280px;
-  height: 320px;
+#service .service-card {
+  width: calc(33.33% - 24px); /* Ajuste conforme o número de cartões desejado */
 
   margin: 12px;
-  padding: 10px;
+  padding: 16px;
 
-  border: 1px solid var(--blue);
+  border: 3px solid var(--dark-blue);
 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  transition: .5s;
 }
 
-#service ul .box .icon{
+#service .service-card:hover{
+  box-shadow: 0px 0px 8px 2px var(--blue);
+}
+
+#service .service-card .icon {
   font-size: 48px;
 }
 
-#service ul .box > .icon > i{
-  text-align: center;
-}
-
-#service ul .box .title {
+#service .service-card .title {
   font-size: 20px;
   margin: 20px 0;
 }
 
-#service ul .box .txt {
+#service .service-card .txt {
   font-size: 16px;
 }
+
 
 /* PORTIFOLIO ---------------------------------------------------------------------------------------------------------------------------*/
 
@@ -432,6 +435,8 @@ nav{
 
 #portifolio header{
   text-align: center;
+  
+  margin-block: 48px;
 }
 
 #portifolio header h1{
@@ -449,7 +454,7 @@ nav{
 
 #portifolio .card {
   border: 1px solid var(--dark-blue);
-  background-color: var(--dark-light);
+  background-color: var(--little-black);
   border-radius: 0 0 16px 16px;
   box-shadow: 5px 7px 10px black;
 
@@ -499,19 +504,139 @@ nav{
   background-color: var(--dark-blue);
 }
 
+/* CONTATO ------------------------------------------------------------------------------------------------------------------------------*/
 
+#contact{
+  background-color: var(--dark);
+  padding: 32px;
+}
 
+#contact  header{
+  margin-bottom: 24px;
+}
 
+#contact header h1 {
+  text-align: center;
+  font-size: 48px;
+  color: var(--blue);
+}
 
+#contact .col-a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
+#contact .btn-whats {
+  border: 1px solid green;
+  border-radius: 30px;
+  padding: 10px 20px; 
+  margin-top: 30px;
+  background-color: green; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff; 
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; 
+}
 
+#contact .btn-whats:hover {
+  background-color: #075e54; 
+  color: #fff; 
+}
 
+#contact .btn-whats .icon {
+  font-size: 24px; 
+  margin-right: 10px; 
+}
 
+#contact .btn-whats .txt {
+  font-size: 16px;
+}
 
+#contact .img{
+  width: 200px;
+}
 
+#contact fieldset{
+  padding: 20px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
 
+#contact legend {
+  text-align: center;
+  font-size: 32px; 
+  color: var(--blue); 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+}
 
+#contact .campo {
+  margin-bottom: 20px;
+}
 
+#contact label {
+  color: var(--blue);
+  display: block;
+  font-weight: bold;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--little-black);
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+#contact textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+#contact input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* FOOTER -------------------------------------------------------------------------------------------------------------------------------*/
+
+footer{
+  background-color: var(--black);
+  padding: 32px;
+}
+
+footer .content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .social-links{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* MEDIA QUERY --------------------------------------------------------------------------------------------------------------------------*/
 
 @media (max-width: 1024px){
   body{

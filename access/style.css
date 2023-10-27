@@ -32,8 +32,6 @@ body{
 section{
   min-height: 80vh;
   width: 100%;
-
-  padding: 20px;
 }
 
 a{
@@ -698,8 +696,8 @@ footer .social-links{
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 360px){
   #about .col-a .img{
-    width: 250px;
+    width: 300px;
   }
 }

@@ -31,6 +31,9 @@ body{
 
 section{
   min-height: 80vh;
+  width: 100%;
+
+  padding: 20px;
 }
 
 a{
@@ -170,10 +173,6 @@ nav .hamburger.active .line-3{
   height: 80vh;
 }
 
-#home .col-a{
-  margin-right: 100px;
-}
-
 #home .col-a header {
   width: 100%;
 }
@@ -216,10 +215,6 @@ nav .hamburger.active .line-3{
   animation: line-typing 600ms steps(60) infinite normal, typing 2s steps(60) 3s normal backwards;
 }
 
-#home .col-b{
-  margin-left: 100px;
-} 
-
 #home .circle {
   width: 27rem;
   height: 27rem;
@@ -230,7 +225,7 @@ nav .hamburger.active .line-3{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(30%, -40%);
+  transform: translate(10%, -40%);
 
   z-index: 0;
 
@@ -649,13 +644,13 @@ footer .social-links{
 
 /* MEDIA QUERY --------------------------------------------------------------------------------------------------------------------------*/
 
-@media(max-width: 1250px){
+@media (max-width: 1250px){
   #home .col-b{
     display: none;
   }
 }
 
-@media (max-width:960px){
+@media (max-width: 960px){
   #about .wrapper{
     flex-direction: column;
   }
@@ -700,5 +695,11 @@ footer .social-links{
   }
   #contact .col-b{
     display: none;
+  }
+}
+
+@media (max-width: 400px){
+  #about .col-a .img{
+    width: 250px;
   }
 }

@@ -655,9 +655,7 @@ footer .social-links{
 }
 
 @media (max-width: 880px){
-  body{
-    overflow-x: hidden;
-  }
+  
   
   nav .nav-list{
     position: absolute;
@@ -703,6 +701,9 @@ footer .social-links{
 }
 
 @media (max-width: 400px){
+  body{
+    overflow-x: hidden;
+  }
   #about .col-a .img{
     width: 300px;
   }

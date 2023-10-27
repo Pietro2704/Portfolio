@@ -664,7 +664,7 @@ footer .social-links{
 
     opacity: 0;
   }
-  .hamburger{
+  nav .hamburger{
     display: block;
   }
   #home .col-b{
@@ -672,5 +672,14 @@ footer .social-links{
   }
   .wrapper{
     flex-direction: column;
+  }
+  #service .service-card {
+    width: 100%; 
+  }
+  #portifolio .card {
+    width: 100%; /* Define a largura como 100% para ocupar toda a largura da tela */
+  }
+  #contact .col-b{
+    display: none;
   }
 }

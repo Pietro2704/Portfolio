@@ -1,47 +1,61 @@
-class Hamburger{
-  
-  // https://www.youtube.com/watch?v=bHRXRYTppHM&t=57s
+class Hamburger {
 
-  constructor(Menu, NavList, NavLinks){
-    this.Menu = document.querySelector(Menu)
-    this.NavList = document.querySelector(NavList)
-    this.NavLinks = document.querySelectorAll(NavLinks)
-    this.activeClass = "active"
+  constructor(menuSelector, navListSelector, navLinksSelector) {
+    this.Menu = document.querySelector(menuSelector);
+    this.NavList = document.querySelector(navListSelector);
+    this.NavLinks = document.querySelectorAll(navLinksSelector);
 
-    this.Activate = this.Activate.bind(this)
+    this.activeClass = "active";
+    this.Activate = this.Activate.bind(this);
   }
 
-  animateLinks(){
-    this.NavLinks.forEach((link,index) => {
-      link.style.animation ? (link.style.animation = "") : (link.style.animation = `NavLinkFade .5s forwards ${index / 7 + .3}s`)
-    })
+  animateLinks() {
+    if (this.NavList.classList.contains(this.activeClass)) {
+
+      this.NavLinks.forEach((link, index) => {
+        link.style.animation = `NavLinkFade .5s forwards ${index / 7 + 0.3}s`;
+      });
+
+    }
   }
 
-  Activate(){
-    this.NavList.classList.contains(this.activeClass) ? this.NavList.classList.remove(this.activeClass) : 
-    this.NavList.classList.add(this.activeClass);
+  Activate() {
+    if (this.Menu.classList.contains(this.activeClass)) {
 
-    this.Menu.classList.contains(this.activeClass) ? this.Menu.classList.remove(this.activeClass) : 
-    this.Menu.classList.add(this.activeClass);
+      this.Menu.classList.remove(this.activeClass);
+      this.NavList.classList.remove(this.activeClass);
 
+      this.NavLinks.forEach((link) => {
+        link.style.animation = "";
+      });
 
-    this.animateLinks();
+    } else {
+
+      this.Menu.classList.add(this.activeClass);
+      this.NavList.classList.add(this.activeClass);
+      this.animateLinks();
+
+    }
   }
 
   addClickEvent() {
     if (this.Menu) {
       this.Menu.addEventListener('click', this.Activate);
     }
+
+    this.NavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        this.Activate();
+      });
+    });
+    
   }
 
   init() {
     this.addClickEvent();
     return this;
   }
-
-
 }
-
 
 const mobileNav = new Hamburger(
   ".hamburger",

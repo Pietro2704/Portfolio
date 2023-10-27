@@ -213,7 +213,7 @@ nav .hamburger.active .line-3{
 }
 
 #home .typing {
-  animation: line-typing 500ms steps(50) infinite normal, typing 2s steps(50) 1.5s normal backwards;
+  animation: line-typing 600ms steps(60) infinite normal, typing 2s steps(60) 3s normal backwards;
 }
 
 #home .col-b{
@@ -448,6 +448,7 @@ nav .hamburger.active .line-3{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 
   padding: 10px;
 }
@@ -467,13 +468,15 @@ nav .hamburger.active .line-3{
   padding: 10px;
 }
 
-#portifolio .card-body .card-title {
+#portifolio .card-title {
   color: var(--blue);
+  text-align: center;
+  font-size: 36px;
 
   margin-bottom: 20px;
 }
 
-#portifolio .card-body .card-desc {
+#portifolio .card-desc {
   color: var(--paragraph);
 
   margin-bottom: 24px;
@@ -598,6 +601,14 @@ nav .hamburger.active .line-3{
   margin-top: 5px;
 }
 
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+  outline: none; 
+  border-color: var(--blue); 
+  box-shadow: 0 0 5px var(--blue); 
+}
+
 #contact textarea {
   resize: vertical;
   min-height: 150px;
@@ -638,11 +649,24 @@ footer .social-links{
 
 /* MEDIA QUERY --------------------------------------------------------------------------------------------------------------------------*/
 
-@media (max-width: 1024px){
+@media(max-width: 1250px){
+  #home .col-b{
+    display: none;
+  }
+}
+
+@media (max-width:960px){
+  #about .wrapper{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 880px){
   body{
     overflow-x: hidden;
   }
-  .nav-list{
+  
+  nav .nav-list{
     position: absolute;
     top: var(--navHeight);
     right: 0;
@@ -659,7 +683,7 @@ footer .social-links{
     transform: translateX(100%);
     transition: transform .3s ease-in;
   }
-  .nav-list li{
+  nav .nav-list li{
     margin-left: 0;
 
     opacity: 0;
@@ -667,17 +691,12 @@ footer .social-links{
   nav .hamburger{
     display: block;
   }
-  #home .col-b{
-    display: none;
-  }
-  .wrapper{
-    flex-direction: column;
-  }
   #service .service-card {
     width: 100%; 
   }
   #portifolio .card {
-    width: 100%; /* Define a largura como 100% para ocupar toda a largura da tela */
+    margin: 20px auto;
+    width: 80%; 
   }
   #contact .col-b{
     display: none;

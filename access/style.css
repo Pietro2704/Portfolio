@@ -694,10 +694,17 @@ footer .social-links{
   #contact .col-b{
     display: none;
   }
+  footer .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 400px){
   #about .col-a .img{
     width: 300px;
   }
+  
 }

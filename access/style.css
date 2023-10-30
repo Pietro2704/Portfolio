@@ -45,27 +45,6 @@ a:hover{
   opacity: .7;
 }
 
-.button{
-  background: none;
-  border: 2px solid var(--blue);
- 
-  padding: 12px;
-
-  width: 180px;
-
-  color: var(--blue);
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: 400ms;
-}
-
 .wrapper {
   display: flex;
   align-items: center;
@@ -211,6 +190,33 @@ nav .hamburger.active .line-3{
 
 #home .typing {
   animation: line-typing 600ms steps(60) infinite normal, typing 2s steps(60) 3s normal backwards;
+}
+
+#home .button{
+  background: none;
+  border: 2px solid var(--blue);
+ 
+  padding: 12px;
+
+  width: 180px;
+
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 400ms;
+}
+
+#home .button:hover{
+  background-color: var(--blue);
+  color: white;
+  opacity: 1;
 }
 
 #home .circle {
@@ -457,6 +463,10 @@ nav .hamburger.active .line-3{
   margin: 12px;
 }
 
+#portifolio .card-head {
+  height: 200px;
+}
+
 #portifolio .card-body {
   padding: 10px;
 }
@@ -652,11 +662,12 @@ footer .social-links{
   #about .wrapper{
     flex-direction: column;
   }
+  #portifolio .card {
+    height: 600px; 
+  }
 }
 
 @media (max-width: 880px){
-  
-  
   nav .nav-list{
     position: absolute;
     top: var(--navHeight);
@@ -687,7 +698,7 @@ footer .social-links{
   }
   #portifolio .card {
     margin: 20px auto;
-    width: 80%; 
+    width: 100%; 
   }
   #contact .col-b{
     display: none;
@@ -706,6 +717,10 @@ footer .social-links{
   }
   #about .col-a .img{
     width: 300px;
+  }
+  #portifolio .card {
+    margin: 20px auto;
+    width: 100%; 
   }
   
 }
